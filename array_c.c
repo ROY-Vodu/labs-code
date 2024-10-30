@@ -48,6 +48,12 @@ int main() {
 	}
 	// print min max
 	printf("MIN = %d, MAX = %d\n",*(ptr_arr+min),*(ptr_arr+max));
+	// перестановка мин и макс
+	{
+		int temp = *(ptr_arr+min);
+		*(ptr_arr+min) = *(ptr_arr+max);
+		*(ptr_arr+max) = temp;
+	}
 	// print result
 	for (int i = 1; i<=25; i++){
 		printf("%3d ",*(ptr_arr+i-1));

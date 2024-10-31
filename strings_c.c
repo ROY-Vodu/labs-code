@@ -7,6 +7,7 @@
 
 char toUpper(char c);
 char toLower(char c);
+void strCopy(char* dest, char* src);
 
 /**
  * @brief The main function
@@ -23,7 +24,8 @@ int main(){
         printf("Memory not allocated. \n");
         return -1;
     }
-    strcpy(str, "Hello, World!");
+    // заполнение строки
+    strCopy(str, "No Fate but what we make");
     int pos = 0;
     
     // вывод посимвольно строки в цикле
@@ -75,4 +77,9 @@ char toLower(char character) {
         return character + OFFSET_CHAR;
     }
     return character;
+}
+void strCopy(char* dest, char* src) {
+    for (; *src != '\0';) {
+        *dest++ = *src++;
+    }
 }

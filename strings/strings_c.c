@@ -4,10 +4,8 @@
 #include <locale.h>
 #include <malloc.h>
 #include <time.h>
-
-char toUpper(char c);
-char toLower(char c);
-void strCopy(char* dest, char* src);
+//
+#include "str_me.h" // подключаем заголовочный файл
 
 /**
  * @brief The main function
@@ -65,19 +63,46 @@ int main(){
     // Check for null pointer reference
     return 0; 
 }
-const int OFFSET_CHAR = 'a' - 'A';
+/**
+ * @brief Convert a character to upper case
+ *
+ * If the character is a lowercase letter, converts it to the
+ * corresponding uppercase letter. Otherwise, leaves the character
+ * unchanged.
+ *
+ * @param character character to convert
+ * @return character converted to uppercase
+ */
 char toUpper(char character) {
     if (character >= 'a' && character <= 'z') {
         character -= OFFSET_CHAR;
     }
     return character;
 }
+/**
+ * @brief Convert a character to lower case
+ *
+ * If the character is an uppercase letter, converts it to the
+ * corresponding lowercase letter. Otherwise, leaves the character
+ * unchanged.
+ *
+ * @param character character to convert
+ * @return character converted to lowercase
+ */
 char toLower(char character) {
     if (character >= 'A' && character <= 'Z') {
         return character + OFFSET_CHAR;
     }
     return character;
 }
+/**
+ * @brief Copies a string from src to dest
+ *
+ * Copies a string from src to dest, up to the null character.
+ *
+ * @param dest destination string
+ * @param src source string
+ */
 void strCopy(char* dest, char* src) {
     for (; *src != '\0';) {
         *dest++ = *src++;

@@ -65,10 +65,19 @@ int main(){
 
     float g = 10.0f;
 
-
-    
-    
-    
-
+/* 
+Результаты вывода:
+---
+Pазмер char 1
+Pазмер int 4
+Pазмер float 4
+Pазмер double 8
+Pазмер short int 2
+Pазмер long int 8
+Pазмер long long int 8
+Pазмер double 8
+Pазмер long double 16
+---
+*/
     return 0;
 }
